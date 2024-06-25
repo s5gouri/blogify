@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("./partials/headers.ejs") %>
+    <title>BLOG</title>
+  </head>
+  <body>
+    <%- include("./partials/navbar.ejs") %>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <form action="/blog/add" method="post" enctype="multipart/form-data">
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label"
+                >Title:</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="exampleFormControlInput1"
+                name="TITLE"
+                
+              />
+              <label for="exampleFormControlInput1" class="form-label"
+                >Cover page:</label
+              >
+              <input
+                type="file"
+                class="form-control"
+                id="exampleFormControlInput1"
+                placeholder="name@example.com"
+                name="COVERPAGE"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="exampleFormControlTextarea1" class="form-label"
+                >Your blog here!!</label
+              >
+              <textarea
+                class="form-control"
+                id="exampleFormControlTextarea1"
+                rows="3"
+                name="BODY"
+              ></textarea>
+              <button type="submit" class="btn btn-outline-primary mt-3">
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <%- include("./partials/scripts.ejs") %>
+  </body>
+</html>

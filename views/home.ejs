@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("./partials/headers.ejs") %>
+    <title>Document</title>
+    <style>
+      .centre {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .mr {
+          margin: 5px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <%- include("./partials/navbar.ejs") %>
+    <div class="container">
+      <div class="row mt-4">
+        <% blogall.forEach((blog) => { %>
+        <div class="col-md-4 mr mt-3">
+          <div class="card" style="width: 18rem">
+            <img src="<%= blog.cover_img_url %>" class="card-img-top" />
+            <div class="card-body">
+              <h5 class="card-title"><%= blog.title %></h5>
+              <a href="/blog/view/<%= blog._id %>" class="btn btn-primary"
+                >View blog</a
+              >
+            </div>
+          </div>
+        </div>
+        <% }) %>
+      </div>
+    </div>
+    <%- include("./partials/scripts.ejs") %>
+  </body>
+</html>
